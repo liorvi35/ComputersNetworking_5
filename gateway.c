@@ -94,6 +94,7 @@ int main(int argc, char *argv[])
             if(inet_aton(argv[1], &cliaddr.sin_addr) < 0)
             {
                 perror("inet_aton() failed");
+                close(sockfd);
                 exit(errno);
             }
             cliaddr.sin_port = htons(PORT + 1);
