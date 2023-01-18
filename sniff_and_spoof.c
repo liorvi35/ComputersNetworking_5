@@ -44,7 +44,6 @@ void packet_data(u_char *user, const struct pcap_pkthdr *header, const u_char *p
 
     char replay_pack[IP_MAXPACKET] = {'\0'};
 
-    // struct icmphdr *icmp = (struct icmphdr*)(replay_pack + sizeof(struct iphdr));
     struct icmphdr *icmp = (struct icmphdr *)(replay_pack + sizeof(struct iphdr));
 
     icmp->type = 0;
