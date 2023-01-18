@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     if (argc != 2) // checking that the user has specified an IP address 
     {
-        printf("usage: ./partb <ip>\n");
+        printf("usage: ./Gateway <ip>\n");
         exit(EXIT_FAILURE);
     }
 
