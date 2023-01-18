@@ -189,7 +189,14 @@ int main(int argc, char *argv[])
         fprintf(stderr, "pcap_findalldevs() failed with error code %d.\nerror message: %s.\n", errno, err);
         exit(EXIT_FAILURE);
     }
-    device = all_devs->next->next->name;
+
+    while(strcmp(all_devs->name , "lo") != 0)
+    {
+        all_devs = all_devs->next;
+
+    }
+
+    device = all_devs->name;
 
     // oppening the device for packet capturing
     handle = pcap_open_live(device , IP_MAXPACKET, PROMISCUSE_MODE, 1000, err);
