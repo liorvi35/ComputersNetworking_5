@@ -1,6 +1,6 @@
 CC = gcc # compiler
 FLAGS = -Wall -g # compilation flags
-TARGETS = Sniffer Spoofer Sniff_and_spoof Gateway gatecheck Ping # exe targets
+TARGETS = Sniffer Spoofer Sniff_and_spoof Gateway Ping # exe targets
 
 .PHONY: all clean
 
@@ -26,9 +26,5 @@ Gateway: gateway.o
 	$(CC) $(FLAGS) -o Gateway gateway.o 
 gateway.o: gateway.c
 	$(CC) $(FLAGS) -c gateway.c
-Gatecheck: gatecheck.o
-	$(CC) $(FLAGS) -o Gatecheck gatecheck.o 
-gatecheck.o: gatecheck.c
-	$(CC) $(FLAGS) -c gatecheck.c
 clean:
 	rm -f *.o *.h.gch $(TARGETS)
