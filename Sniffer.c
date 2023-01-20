@@ -79,7 +79,7 @@ int print_tcp_header(const struct tcphdr *tcp, unsigned int ip_size, FILE *packe
     printf("Flags: FIN = %u, SYN = %u, RST = %u, PSH = %u, ACK = %u, URG = %u\n", 
             tcp->fin, tcp->syn, tcp->rst, tcp->psh, tcp->ack, tcp->urg);
     printf("Window: %u\n", ntohs(tcp->window));
-    printf("Checksum: 0x%04x [%s]\n", ntohs(tcp->check), (ntohs(tcp->check) == 0 ? "verified" : "unverified"));
+    printf("Checksum: 0x%04x\n", ntohs(tcp->check));
     printf("Urgent Pointer: %u\n", ntohs(tcp->urg_ptr));
 
     fprintf(packets, " source_port: %u, dest_port: %u,", ntohs(tcp->source), ntohs(tcp->dest));
