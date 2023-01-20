@@ -58,7 +58,7 @@ void print_ip_header(const struct iphdr *ip, FILE *packets)
     printf("Fragment Offset: %u\n", ntohs(ip->frag_off) & 0x1fff);
     printf("Time to Live: %u\n", ip->ttl);
     printf("Protocol: %s (%u)\n", (ip->protocol == IPPROTO_TCP ? "TCP" : "UNKNOWN"), ip->protocol);
-    printf("Header Checksum: 0x%04x [validation %s]\n", ntohs(ip->check), (ntohs(ip->check) == 0 ? "enabled" : "disabled"));
+    printf("Header Checksum: 0x%04x\n", ntohs(ip->check));
     printf("Source Address: %s\n", inet_ntoa(*((struct in_addr*)&ip->saddr)));
     printf("Destination Address: %s\n", inet_ntoa(*((struct in_addr*)&ip->daddr)));
 
